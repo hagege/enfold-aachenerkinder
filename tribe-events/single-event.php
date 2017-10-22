@@ -23,9 +23,11 @@ $event_id = get_the_ID();
 // zeigt die nächste Seite - noch nicht ideal, aber schon besser als bisher:
 // $vorherige_seite = tribe_get_listview_dir_link();
 
+// Funktioniert nicht, Änderung am 22.10.2017:
+// START: 08.10.2017, Andrei: //
 // $vorherige_seite = tribe_get_listview_dir_link();
-// $vorherige_seite = $_SERVER["HTTP_REFERER"];
-$vorherige_seite = wp_get_referer();
+$vorherige_seite = $_SERVER["HTTP_REFERER"];
+// $vorherige_seite = wp_get_referer();
 // $vorherige_seite = wp_get_original_referer();
 
 ?>
