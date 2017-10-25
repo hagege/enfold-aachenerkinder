@@ -75,6 +75,12 @@ $vorherige_seite = $_SERVER["HTTP_REFERER"];
 			<div class="tribe-events-single-event-description tribe-events-content">
 				<?php the_content(); ?>
 			</div>
+      
+      <!-- 	Erst mal in Listenansicht und in Einzelansicht:              -->		
+			<!--  Social Media Icons Facebook, Twitter... 24.10.2017, Andrei; korrigiert 25.10.2017, hgg   -->
+      <?php add_tribe_event_sharing(); ?>		
+			<!-- Social Media Icons Facebook, Twitter ... Ende -->
+
 			<!-- .tribe-events-single-event-description -->
 			<?php do_action( 'tribe_events_single_event_after_the_content' ) ?>
 
