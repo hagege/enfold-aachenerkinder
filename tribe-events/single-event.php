@@ -36,7 +36,7 @@ $vorherige_seite = $_SERVER["HTTP_REFERER"];
 
 	<p class="tribe-events-back">
     <!-- Damit nicht auf alle Veranstaltungen, sondern auf Veranstaltungen der Kategorie "Terminanzeige" verlinkt wird: Link "Alle Veranstaltungen" -->
-    <!-- Außerdem Korrektur von Alle statt All - noch mal prüfen>
+    <!-- Außerdem Korrektur von Alle statt All - hat sich erledigt>
     <!-- Änderung am 19.3.2017, HGG --> 
     <!-- <a href="<?php echo esc_url( tribe_get_events_link() ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'All %s', '%s Events plural label', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a> -->
     <a href="<?php echo esc_url( $vorherige_seite ); ?>"> <?php printf( '&laquo; ' . esc_html_x( 'Vorher angezeigte Seite', '%s Events plural label', 'tribe-events-calendar-pro' ), $events_label_plural ); ?></a>
