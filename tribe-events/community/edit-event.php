@@ -68,11 +68,11 @@ if ( ! isset( $tribe_event_id ) ) {
 
 	<!-- aachenerkinder.de: hier Veranstaltungsort, Veranstalter und Kosten rausgenommen -->
 
-	<p>Bitte geben Sie hier die Veranstaltungs - Webseite (URL) an.</p>
+	<p><strong>Bitte hier die Veranstaltungs - Webseite (URL) eingeben.</strong></p>
 	<?php tribe_get_template_part( 'community/modules/website' ); ?>
 		<!-- Ergänzung aachenerkinder.de -->
     <br>
-		<strong>Wichtig: Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</strong>
+		<strong>Wichtig: Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben. <br>Ansprechpartner, Telefon, Mailadresse werden nicht veröffentlicht, sondern werden nur für evtl. Rückfragen bzw. zur Information über die Veröffentlichung benötigt.</strong>
    
 
 	<?php tribe_get_template_part( 'community/modules/custom' ); ?>
