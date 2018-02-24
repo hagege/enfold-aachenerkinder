@@ -597,6 +597,11 @@ display: inline-block;
 /* z. Bsp.: weiße Farbe, bei Hover: unterstrichen
 /*----------------------------------------------------------------*/
 
+/* Absatz für Button */
+.button-absatz {
+    margin:30px 0px 30px 0px;
+}
+
 .tribe-events-button-beitrag {
     padding: 10px;
     color: #ffffff!important;
