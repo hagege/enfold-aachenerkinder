@@ -618,11 +618,11 @@ a.tribe-events-button-beitrag:visited{
 }
 
   
+/* Hintergrund: grün */  
 a.tribe-events-button-beitrag:hover{
   color: #fff!important;
-  text-decoration: underline!important;
+  background-color: #6ba825
 }
-
 
 /*----------------------------------------------------------------*/
 /* Ende: Button in Beiträgen
