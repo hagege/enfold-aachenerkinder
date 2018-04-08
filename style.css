@@ -920,55 +920,6 @@ background: #6ba825
 /* Ende: Mobile Ansicht schon bei 1200px aktivieren Styles */
 /*--------------------------------------------------------------- */ 
 
-
-
-
-
-/*--------------------------------------------------------------- */
-/* Start: Mobile Ansicht für Retina Tablets aktivieren */
-/* ausgeschaltet: 1.4.2018 */
-/*--------------------------------------------------------------- */ 
-/*
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 2) { 
-*/
-/* eingeschaltet: 1.4.2018 */  
-@media only screen and (max-width: 990px) {        
-        .container #advanced_menu_toggle, .container #advanced_menu_hide {
-          display: block;
-        }
-
-        .responsive .main_menu {
-          display: none;
-        }
-
-        .responsive #mobile-advanced {
-          display: block;
-        }
-
-        .container {
-          max-width: 100% !important;
-        }
-        
-        #top #main .sidebar {
-          width: 100% !important;
-        }
-        
-        .content { 
-          width: 100% !important; border: none !important; 
-        }
-}
-/*--------------------------------------------------------------- */
-/* Ende: Mobile Ansicht für Retina Tablets aktivieren */
-/*--------------------------------------------------------------- */
-
-
-
-
-
-
 /*--------------------------------------------------------------- */
 /* Start: Tribe Widget Calendar Aachener Kinder Styles */
 /*--------------------------------------------------------------- */ 
@@ -1385,36 +1336,183 @@ h4 {
     display: block!important;
 }
 */
+
+
+/*--------------------------------------------------------------- */
+/* Start: Mobile Ansicht für Retina Tablets aktivieren */
+/* ausgeschaltet: 1.4.2018 */
+/*--------------------------------------------------------------- */ 
+/*
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) { 
+*/
+/* eingeschaltet: 1.4.2018 
+@media only screen and (max-width: 1240px) {        
+        .container #advanced_menu_toggle, .container #advanced_menu_hide {
+          display: block;
+        }
+
+        .responsive .main_menu {
+          display: none;
+        }
+
+        .responsive #mobile-advanced {
+          display: block;
+        }
+
+}
+/* Balken nicht zeigen 
+@media only screen and (max-device-width : 990px){
+    .avia-menu.av-main-nav-wrap {
+    display: block!important;
+  }     
+}
+*/
+/*--------------------------------------------------------------- */
+/* Ende: Mobile Ansicht für Retina Tablets aktivieren */
+/*--------------------------------------------------------------- */
+
+
 /*------------------------------------------------------------------------------ */
-/* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
-/* geändert: 1.4.2018, hgg */
+/* START - Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
 /*------------------------------------------------------------------------------ */
-@media only screen and (max-width: 1024px) {
+@media only screen and ( max-width: 989px ) {
+
+  .container #advanced_menu_toggle, .container #advanced_menu_hide {
+    display: block;
+  }
+
+/*
+  .responsive .main_menu {
+    display: none;
+  }
+
+  .responsive #mobile-advanced {
+    display: block;
+  }
+
+*/
+/* Anzeige Menue und Suche: */
   nav.main_menu {
     display: block !important;
   }
+
   #avia-menu .menu-item {
     display: none !important;
   }
+/* Anzeige Menue*/
   .av-burger-menu-main.menu-item-avia-special {
     display: block !important;
   }
+/* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
+  .container {
+    max-width: 100% !important;
+  }
+  
+  #top #main .sidebar {         
+    width: 100% !important;
+  }
+  
+/* Damit die grüne Leiste mit dem Menü und der Suche nicht unterhalb des Logos gezeigt wird */ 
+  #header_main_alternate, #header_main_alternate .sub-menu a {
+    display: none !important;
+  }
+  
+/* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
+  .content { 
+    width: 100% !important; border: none !important; 
+  }
+
+  /*
   span.logo{
     /* Logo weiter nach rechts, damit das Menue nicht überdeckt wird. 
     /* display: none !important; */
-    /* padding: 50px 0px 0px 0px !important; */
-     padding-left: 50px; !important;
+    /* padding: 50px 0px 0px 0px !important; 
+     padding-left: 50px !important;
+  } 
+  */
+
+/* Sonst wird die Suche nicht richtig als Icon gezeigt */
+  #top #menu-item-search {
+      /* ausgeschaltet, weil sonst das Icon nicht richtig angeklickt werden kann: */
+      /* width: 20px; */
+      display: block !important;
+  }  
+
+/* Damit das Wort "Menue" unter dem Hamburger-Menue nicht gezeigt wird */
+  .av-hamburger strong {
+    display: none!important;
   }
 }
+
+/*------------------------------------------------------------------------------ */
+/* Sonderfall von 990px bis 1100px */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/*------------------------------------------------------------------------------ */
+
+@media only screen 
+and (min-device-width : 990px) 
+and (max-device-width : 1100px)
+{
+/* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
+  .container {
+    max-width: 100% !important;
+  }
+  
+ 
+/* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
+  .content { 
+    width: 100% !important; border: none !important; 
+  }
+
+
+/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  .avia-menu-text {
+    font-size: 90% !important;
+}
 /*
-@media only screen and (max-width: 800px) {
-.av-burger-menu-main { 
-     display: block!important; 
+
+  #top #main .sidebar {         
+    width: 100% !important;
+  }
+ 
+  nav.main_menu {
+    display: block !important;
+  }
+  
+  #avia-menu .menu-item {
+    display: block;
+  }
+  
+  .av-burger-menu-main.menu-item-avia-special {
+    display: inline-block;
+  }
+*/  
 }
-#top .av_mobile_menu_tablet .av-main-nav .menu-item {
-     display: none!important;
+
+@media only screen 
+and (min-device-width : 1101px) 
+and (max-device-width : 1250px) {
+
+/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  .avia-menu-text {
+    font-size: 90% !important;
 }
-*/
+
+}
+
+/*------------------------------------------------------------------------------ */
+/* ENDE - Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
+/*------------------------------------------------------------------------------ */
+
+
+/*
 /*------------------------------------------------------------------------------ */
 /* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
 /*------------------------------------------------------------------------------ */
