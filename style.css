@@ -1659,4 +1659,21 @@ and (max-device-width : 1250px) {
 /* Autor: hgg
 /*----------------------------------------------------------------*/
 
+/*----------------------------------------------------------------*/
+/* Start: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/
 
+.mitteilung{
+  background-color: #F9F9F9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-width:5px;  
+  border-style:dashed;
+}
+/*----------------------------------------------------------------*/
+/* Ende: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/

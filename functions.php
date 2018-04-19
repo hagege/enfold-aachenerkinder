@@ -320,4 +320,41 @@ add_filter('the_generator', 'wpb_remove_version');
   require_once 'library/inc.overwrite_plugin.php';
   require_once 'library/inc.disable_tribe_js.php';
 
+/*----------------------------------------------------------------*/
+/* Start: Ausschließen recaptcha bei lazyload WP Rocket, siehe Antwort von Lucy 
+/* Datum: 29.12.2017
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+function rocket_lazyload_exclude_src( $src ) {
+$src[] = '?cp_contactformtoemail_captcha=captcha';
 
+return $src;
+}
+add_filter( 'rocket_lazyload_excluded_src', 'rocket_lazyload_exclude_src' );
+/*----------------------------------------------------------------*/
+/* Ende: Ausschließen recaptcha bei lazyload WP Rocket 
+/* Datum: 29.12.2017
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------*/
+/* Start: PHP in Text-Widget nutzen 
+/* Datum: 05.04.2018
+/* Autor: hgg
+/*----------------------------------------------------------------*/
+add_filter('widget_text', 'gibmirphp', 99);
+function gibmirphp($text) {
+  if (strpos($text, '<' . '?') !== false) {
+    ob_start();
+     eval('?' . '>' . $text);
+     $text = ob_get_contents();
+    ob_end_clean();
+  }
+  return $text;
+}
+/*----------------------------------------------------------------*/
+/* Ende: PHP in Text-Widget nutzen 
+/* Datum: 05.04.2018
+/* Autor: hgg
+/*----------------------------------------------------------------*/
