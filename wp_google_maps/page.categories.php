@@ -406,9 +406,6 @@ function wpgmaps_category_head() {
 	global $wpdb;
 	global $wpgmza_tblname_categories;
 	global $wpgmza_tblname_category_maps;
-	
-	if(empty($wpgmza_tblname_categories))
-		return;
 
 	$columns = $wpdb->get_col("SHOW COLUMNS FROM $wpgmza_tblname_categories");
 	
@@ -710,7 +707,6 @@ function wpgmza_pro_return_category_select_list($map_id) {
     return $ret_msg;
 
 }
-
 
 function wpgmza_return_marker_count_by_category( $cat_id = false, $map_id = false ) {
 

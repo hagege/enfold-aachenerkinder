@@ -710,6 +710,135 @@ function wpgmza_pro_return_category_select_list($map_id) {
     return $ret_msg;
 
 }
+function wpgmza_pro_return_category_checkbox_list($map_id,$show_all = true,$array = false) {
+    global $wpdb;
+    global $wpgmza_tblname_categories;
+    global $wpgmza_tblname_category_maps;
+	
+    if ($array) { $array_suffix = "[]"; } else { $array_suffix = ""; }
+	
+    $sql = "SELECT * FROM `$wpgmza_tblname_category_maps` LEFT JOIN `$wpgmza_tblname_categories` ON $wpgmza_tblname_category_maps.cat_id = $wpgmza_tblname_categories.id WHERE ( `map_id` = '$map_id' OR `map_id` = '0' ) AND `active` = 0 AND `parent` = '0' ORDER BY priority DESC, `category_name` ASC";
+
+    $ret_msg = "<div class='wpgmza_cat_checkbox_holder wpgmza_cat_checkbox_".$map_id."'>";
+    //$ret_msg .= "<div class='wpgmza_cat_checkbox_item_holder_first'>";
+    //if ($show_all) { $ret_msg .= "<input type='checkbox' class='wpgmza_checkbox' id='wpgmza_cat_checkbox_0' name='wpgmza_cat_checkbox$array_suffix' mid=\"".$map_id."\" value=\"0\" /><label for='wpgmza_cat_checkbox_0'>".__("All","wp-google-maps")."</label>"; }
+    //$ret_msg .= "</div>";
+    
+    $results = $wpdb->get_results($sql);
+    $cat_link_text = sprintf( __( '<a href="%1$s">Create a category.</a>', 'wp-google-maps' ),
+        admin_url("admin.php?page=wp-google-maps-menu-categories")
+    );
+
+
+    if (!$results && is_admin()) { return __("<em><small>No categories found</small></em>","wp-google-maps"). " <em><small>".$cat_link_text."</em></small>"; }
+    if (!$results && !is_admin()) { return __("<em><small>No categories found</small></em>","wp-google-maps"); }
+
+
+    /**
+     * Builds the final category array that we will use to construct HTML
+     * @var array
+     */
+    $category_array = array();
+
+    foreach ( $results as $result ) {
+        $category_array[$result->id] = array();
+
+        $category_array[$result->id]['title'] = stripslashes($result->category_name);
+        $category_array[$result->id]['id'] = $result->id;
+        $category_array[$result->id]['retina'] = $result->retina;
+        $category_array[$result->id]['active'] = $result->active;
+        $category_array[$result->id]['parent_id'] = 0;
+        $category_array[$result->id]['total_markers'] = wpgmza_return_marker_count_by_category( $result->id, $map_id );
+        $category_array[$result->id]['children'] = false; /* set this to false by default */
+
+
+        /* lets look for children */
+        $continue = true;
+        $parents_to_check = array();
+        $parents_to_check[$result->id] = false;
+
+
+        $safety_counter = 0;
+        while ($continue) {
+            $safety_counter++;
+            if ($safety_counter > 1000) {
+                break;
+            }
+
+            foreach ($parents_to_check as $current_parent_id => $has_been_checked) {
+                if (!$has_been_checked) {
+					$current_parent_id = (int)$current_parent_id;
+                    $sql = "SELECT * FROM `$wpgmza_tblname_categories` WHERE `active` = 0 AND `parent` = '".$current_parent_id."' ORDER BY `category_name` ASC";
+                    
+                    $child_results = $wpdb->get_results($sql);
+                    if ($child_results) {
+
+                        /* there are children */
+                        foreach ( $child_results as $child_result ) {
+
+                            $category_array[$child_result->id]['title'] = stripslashes($child_result->category_name);
+                            $category_array[$child_result->id]['id'] = $child_result->id;
+                            $category_array[$child_result->id]['retina'] = $child_result->retina;
+                            $category_array[$child_result->id]['active'] = $child_result->active;
+                            $category_array[$child_result->id]['parent_id'] = $current_parent_id;
+                            $category_array[$child_result->id]['total_markers'] = wpgmza_return_marker_count_by_category( $child_result->id, $map_id );
+                            $category_array[$child_result->id]['children'] = false; /* set this to false by default */
+
+                            /* mark this ID as 'to be checked' within the loop */
+                            $category_array[$current_parent_id]['children'][] = $child_result->id;
+                            $parents_to_check[$child_result->id] = false;
+
+                        }
+
+                        /* mark this parent as 'checked' */
+                       
+
+                    } else {
+                        /* no children left.. */
+                    }
+                    $parents_to_check[$current_parent_id] = true;
+
+                    
+                }
+            }
+
+            /* lets identify if we've gone through the enture checker array and marked everything as true. i.e. check if we are complete */
+            $still_continue = false;
+            foreach ($parents_to_check as $current_parent_id => $has_been_checked) {
+                if (!$has_been_checked) { $still_continue = true; /* theres still categories to look at*/ }
+            }
+            if (!$still_continue) {
+                $continue = false;
+            }
+            
+        }
+
+
+       
+
+        
+        //$ret_msg .= "<div class='wpgmza_cat_checkbox_item_holder wpgmza_cat_checkbox_item_holder_".$result->id."' ".$div_style."><input type='checkbox' class='wpgmza_checkbox' id='wpgmza_cat_checkbox_".$result->id."' name='wpgmza_cat_checkbox$array_suffix' mid=\"".$map_id."\" value=\"".$result->id."\" /><label for='wpgmza_cat_checkbox_".$result->id."'>".stripslashes($result->category_name)."</label></div>";
+    }    
+
+
+     /* build the tree */
+    $tree = wpgmza_build_tree($category_array);
+
+
+    global $wpmgza_cat_tree_html;
+    $wpmgza_cat_tree_html = '';
+    
+    
+    wpgmza_consume_tree($tree, $array_suffix, $map_id);
+
+    $ret_msg.= $wpmgza_cat_tree_html;
+
+
+    $ret_msg .= "</div>";
+    
+    return $ret_msg;
+
+}
 
 
 function wpgmza_return_marker_count_by_category( $cat_id = false, $map_id = false ) {

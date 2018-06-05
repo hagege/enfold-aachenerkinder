@@ -406,9 +406,6 @@ function wpgmaps_category_head() {
 	global $wpdb;
 	global $wpgmza_tblname_categories;
 	global $wpgmza_tblname_category_maps;
-	
-	if(empty($wpgmza_tblname_categories))
-		return;
 
 	$columns = $wpdb->get_col("SHOW COLUMNS FROM $wpgmza_tblname_categories");
 	
