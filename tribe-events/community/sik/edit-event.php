@@ -72,14 +72,7 @@ if ( ! isset( $tribe_event_id ) ) {
 	<?php tribe_get_template_part( 'community/modules/website' ); ?>
 		<!-- Ergänzung aachenerkinder.de -->
     <br>
-		<strong>Wichtig: 
-    <ol>
-      <li>Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</li>
-      <li>Wenn Du ein Bild oder Foto hochladen möchtest, musst Du zwingend den Namen des Urhebers bzw. Fotografen im Feld "Copyright Foto (Name)" weiter unten eingeben. 
-      Ansonsten kann das Bild oder Foto nicht veröffentlicht werden!</li> 
-      <li>Bitte nur Bilder oder Fotos mit maximal 800 KB hochladen</li>
-    </ol>
-    </strong>
+		<strong>Wichtig: Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben. <br>Ansprechpartner, Telefon, Mailadresse werden nicht veröffentlicht, sondern werden nur für evtl. Rückfragen bzw. zur Information über die Veröffentlichung benötigt.</strong>
    
 
 	<?php tribe_get_template_part( 'community/modules/custom' ); ?>
