@@ -72,6 +72,7 @@ if ( ! isset( $tribe_event_id ) ) {
 	<?php tribe_get_template_part( 'community/modules/website' ); ?>
 		<!-- Ergänzung aachenerkinder.de -->
     <br>
+		<p class="fett">Der Veranstaltungsort und der Hinweis auf das Copyright beim Foto wird veröffentlicht. <br>Alle anderen Daten werden lediglich benötigt, um ggfs. Kontakt aufzunehmen und werden natürlich nicht veröffentlicht.</p>
 		<strong>Wichtig: 
     <ol>
       <li>Bitte den Veranstaltungsort immer mit Straße, PLZ und Ort eingeben.</li>
