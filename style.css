@@ -1020,7 +1020,8 @@ background: #6ba825
 
 .tribe-mobile .tribe-events-category-premium .tribe-events-list-event-title, .tribe-mobile .tribe-events-category-xxl .tribe-events-list-event-title, .tribe-mobile  .events-category-xxl .tribe-events-map-event-title {
     background-color: #ffde00;
-    display: inline-block!important;
+    /*  ausgeschaltet, weil Darstellung nicht mehr korrekt ist, hgg, 13.6.2018: */
+    /* display: inline-block!important; */
 }
 
 
