@@ -109,14 +109,31 @@ function tribe_count_by_cat ( $event_category_slug ) {
 
 
   /* -- ADD SHARING AFTER EVERY EVENT -- */
-  /* ausgeschaltet, weil über das Shariff-plugin diese Funktionalität jetzt besser und datenschutsicherer eingebaut ist.
-  /* alte Version - siehe github
-  /* hgg, 15.6.2018 */
 
   function add_tribe_event_sharing(){
     ?>
 
-    <div class="share">  
+    <div class="share">
+      Teilen auf:
+      <?php /* FACEBOOK */ ?>
+      <a target="_blank" class="sharebutton facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo rawurlencode(get_permalink()); ?>" title="<?php _e('Diesen Beitrag auf Facebook teilen'); ?>">
+        <img src="https://aachenerkinder.de/grafiken/facebook.png" alt="facebook" title="facebook" width=16px hight=16px border="0">
+      </a>
+
+      <?php /* TWITTER */ ?>
+      <a target="_blank" class="sharebutton twitter" href="https://twitter.com/home?status=<?php echo rawurlencode(get_the_title().' '.get_permalink()); ?>" title="<?php _e('Diesen Beitrag twittern'); ?>">
+        <img src="https://aachenerkinder.de/grafiken/twitter.png" alt="twitter" title="twitter" width=16px hight=16px border="0">
+      </a>
+
+      <?php /* GOOGLE PLUS */ ?>
+      <a target="_blank" class="sharebutton googleplus" href="https://plus.google.com/share?url=<?php echo rawurlencode(get_permalink()); ?>" title="<?php _e('Diesen Beitrag auf Google+ teilen'); ?>">
+        <img src="https://aachenerkinder.de/grafiken/google_plus.png" alt="Google +" title="Google +" width=16px hight=16px border="0">
+      </a>
+      
+      <?php /* Mail */ ?>  
+      <a class="sharebutton mail" href="mailto:?subject=interessanter Link auf aachenerkinder.de&body=Hallo, hier ist ein interessanter Link auf aachenerkinder.de:<?php echo rawurlencode(get_permalink()); ?> Viele Grüße" title="<?php _e('Diesen Beitrag per Mail teilen'); ?>">
+        <img src="https://aachenerkinder.de/grafiken/mail.png" alt="Mail" title="Mail" width=16px hight=16px border="0"> 
+      </a>
       
     </div>
 

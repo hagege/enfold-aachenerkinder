@@ -1144,12 +1144,13 @@ background: #fff;
 
 
 /*--------------------------------------------------------------- */
-/* Start: fix "eintrit frei" position   */
+/* Start: fix "Eintritt frei" position   */
 /*--------------------------------------------------------------- */ 
 #tribe-events-content.tribe-events-list .tribe-events-event-cost {
     position: absolute;
     right: 21px;
-    bottom: 70px;
+    /* geändert von 70px auf 21px, hgg, 15.6.2018 */
+    bottom: 21px;
     margin: 0;
     z-index: 10;
   }
@@ -1602,12 +1603,15 @@ and (max-device-width : 1250px) {
   text-decoration: underline;
 }
 
+/* ausgeschaltet: 15.6.2018, hgg */
+/*
 .share{
 	
 }
 .share .sharebutton.facebook {color: #3b5998; }
 .share .sharebutton.twitter {color: #4099ff; }
 .share .sharebutton.googleplus {color: #d34836; }
+*/
 /*--------------------------------------------------------------- */
 /***** Ende: SHARE BUTTONS Custom Styles *****/
 /*--------------------------------------------------------------- */
