@@ -1119,7 +1119,7 @@ margin-top: inherit;
 #top .ui-datepicker-title select{
   height: 30px;
 }
-
+*/
 
 
 #tribe-community-events table{
@@ -1452,6 +1452,11 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .av-hamburger strong {
     display: none!important;
   }
+  
+/* Hintergrund - Farbe bei der Ansicht des Fotos auf grau - hgg, 15.6.2018 */
+  .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
+    border-color: #e8e8e8;
+    background-color: #e8e8e8;  
 }
 
 /*------------------------------------------------------------------------------ */
