@@ -6,7 +6,7 @@ Tags: magazine, news, blog, blogging, blogger, gallery, personal, portfolio, tra
 Author: Hans-Gerd Gerhards / Jens Bredigkeit
 Author URI: https://aachenerkinder.de
 Template:     enfold
-Version: 17.05.2016
+Version: 1.04.2018
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -443,7 +443,6 @@ color: #fff;
 
 
 
-
 /*--------------------------------------------------------------- */
 /***** Start: FORMULAR UPPERCASE BEHEBEN *****/
 /*--------------------------------------------------------------- */
@@ -488,7 +487,9 @@ a.tribe-events-read-more:hover {
 
 /*--------------------------------------------------------------- */
 /***** Start: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
+/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
 /*--------------------------------------------------------------- */
+/*
 @media screen and (max-width: -width: 1200px) {
         tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-date-filter,
         .tribe-bar-collapse #tribe-bar-views, .tribe-bar-collapse .tribe-bar-filters-inner .tribe-bar-search-filter,
@@ -550,6 +551,7 @@ a.tribe-events-read-more:hover {
         border-bottom: #000;
         }
 }
+*/
 /*--------------------------------------------------------------- */
 /***** Ende: Displaygrößen-abhängige Anpassungen an der Filterbar ******/
 /*--------------------------------------------------------------- */
@@ -560,18 +562,20 @@ a.tribe-events-read-more:hover {
 
 /*--------------------------------------------------------------- */
 /* Start TEC: filter bar */
+/* deaktiviert 1.4.2018 (filterbar wird seit langem nicht mehr verwendet) */
 /*--------------------------------------------------------------- */ 
 
 
 /* Schriftfarbe geändert (6.6.2016) */
 /* Schriftgröße geändert (von 11 auf 10) (27.7.2016) */
-
+/* 
 #top #wrap_all .tribe-events-button {
   padding: 10px!important;
   color: #ffffff!important;
   font-size: 10px!important;
-  /* font-weight: bold!important ; */ 
+  /* font-weight: bold!important ; 
 }
+*/ 
 
 #tribe_events_filter_item_eventcategory {
   float: left;
@@ -757,7 +761,10 @@ select.ui-datepicker-month, select.ui-datepicker-year {
 
 #tribe-events .tribe-events-button {
   margin-bottom: 30px;
+  /* Weiße Schrift, 11.4.2018, hgg */  
+  color: white !important;
 }
+
 #tribe-events-bar:before,
 #tribe-events-bar:after {
   display: none;
@@ -890,9 +897,11 @@ background: #6ba825
 
 /*--------------------------------------------------------------- */
 /* Start: Mobile Ansicht schon bei 1200px aktivieren Styles */
+/* ausgeschaltet: 1.4.2018, hgg */
 /*--------------------------------------------------------------- */ 
 
 /*Navigation bei Displays mit maximal 1200px verstecken, da sie sonst nicht mehr in eine Zeile passt */
+/*
 @media only screen and (max-width: 1200px) {
         .responsive.html_mobile_menu_tablet .main_menu .avia-menu, .responsive.html_mobile_menu_tablet #header_main .social_bookmarks, .responsive.html_mobile_menu_tablet #header_main_alternate {
             display: none;
@@ -901,57 +910,18 @@ background: #6ba825
           width: 100%;
         }
 }
-
+*/
 /*Mobile Navigation fürs Displays mit maximal 1200px aktivieren */
+/*
 @media only screen and (max-width: 1200px){
         .responsive.html_mobile_menu_tablet .container #advanced_menu_toggle, .responsive.html_mobile_menu_tablet #advanced_menu_hide {
             display: block;
         }
 }
+*/
 /*--------------------------------------------------------------- */
 /* Ende: Mobile Ansicht schon bei 1200px aktivieren Styles */
 /*--------------------------------------------------------------- */ 
-
-
-
-
-
-/*--------------------------------------------------------------- */
-/* Start: Mobile Ansicht für Retina Tablets aktivieren */
-/*--------------------------------------------------------------- */ 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px)
-and (-webkit-min-device-pixel-ratio: 2) { 
-        
-        .container #advanced_menu_toggle, .container #advanced_menu_hide {
-        display: block;
-        }
-
-        .responsive .main_menu {
-        display: none;
-        }
-
-        .responsive #mobile-advanced {
-        display: block;
-        }
-
-        .container {
-        max-width: 100% !important;
-        }
-        #top #main .sidebar {
-        width: 100% !important;
-        }
-
-}
-/*--------------------------------------------------------------- */
-/* Ende: Mobile Ansicht für Retina Tablets aktivieren */
-/*--------------------------------------------------------------- */ 
-
-
-
-
-
 
 /*--------------------------------------------------------------- */
 /* Start: Tribe Widget Calendar Aachener Kinder Styles */
@@ -1050,7 +1020,8 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
 .tribe-mobile .tribe-events-category-premium .tribe-events-list-event-title, .tribe-mobile .tribe-events-category-xxl .tribe-events-list-event-title, .tribe-mobile  .events-category-xxl .tribe-events-map-event-title {
     background-color: #ffde00;
-    display: inline-block!important;
+    /*  ausgeschaltet, weil Darstellung nicht mehr korrekt ist, hgg, 13.6.2018: */
+    /* display: inline-block!important; */
 }
 
 
@@ -1144,10 +1115,11 @@ margin-top: inherit;
 }
 
 /* Datepicker Fix */
+/* ausgeschaltet am 5.6.2018
 #top .ui-datepicker-title select{
   height: 30px;
 }
-
+*/
 
 
 #tribe-community-events table{
@@ -1172,12 +1144,13 @@ background: #fff;
 
 
 /*--------------------------------------------------------------- */
-/* Start: fix "eintrit frei" position   */
+/* Start: fix "Eintritt frei" position   */
 /*--------------------------------------------------------------- */ 
 #tribe-events-content.tribe-events-list .tribe-events-event-cost {
     position: absolute;
     right: 21px;
-    bottom: 70px;
+    /* geändert von 70px auf 21px, hgg, 15.6.2018 */
+    bottom: 21px;
     margin: 0;
     z-index: 10;
   }
@@ -1356,6 +1329,7 @@ h4 {
 
 
 /*MOBILES MENU ICON FIX 22.07.17 */
+/*
 .avia-menu.av-main-nav-wrap {
   display: block!important;
 }
@@ -1365,9 +1339,194 @@ h4 {
 }
 
 .av-hamburger strong {
- 	display: block!important;
-}	
+    display: block!important;
+}
+*/
 
+
+/*--------------------------------------------------------------- */
+/* Start: Mobile Ansicht für Retina Tablets aktivieren */
+/* ausgeschaltet: 1.4.2018 */
+/*--------------------------------------------------------------- */ 
+/*
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (-webkit-min-device-pixel-ratio: 2) { 
+*/
+/* eingeschaltet: 1.4.2018 
+@media only screen and (max-width: 1240px) {        
+        .container #advanced_menu_toggle, .container #advanced_menu_hide {
+          display: block;
+        }
+
+        .responsive .main_menu {
+          display: none;
+        }
+
+        .responsive #mobile-advanced {
+          display: block;
+        }
+
+}
+/* Balken nicht zeigen 
+@media only screen and (max-device-width : 990px){
+    .avia-menu.av-main-nav-wrap {
+    display: block!important;
+  }     
+}
+*/
+/*--------------------------------------------------------------- */
+/* Ende: Mobile Ansicht für Retina Tablets aktivieren */
+/*--------------------------------------------------------------- */
+
+
+/*------------------------------------------------------------------------------ */
+/* START - Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
+/*------------------------------------------------------------------------------ */
+@media only screen and ( max-width: 989px ) {
+
+  .container #advanced_menu_toggle, .container #advanced_menu_hide {
+    display: block;
+  }
+
+/*
+  .responsive .main_menu {
+    display: none;
+  }
+
+  .responsive #mobile-advanced {
+    display: block;
+  }
+
+*/
+/* Anzeige Menue und Suche: */
+  nav.main_menu {
+    display: block !important;
+  }
+
+  #avia-menu .menu-item {
+    display: none !important;
+  }
+/* Anzeige Menue*/
+  .av-burger-menu-main.menu-item-avia-special {
+    display: block !important;
+  }
+/* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
+  .container {
+    max-width: 100% !important;
+  }
+  
+  #top #main .sidebar {         
+    width: 100% !important;
+  }
+  
+/* Damit die grüne Leiste mit dem Menü und der Suche nicht unterhalb des Logos gezeigt wird */ 
+  #header_main_alternate, #header_main_alternate .sub-menu a {
+    display: none !important;
+  }
+  
+/* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
+  .content { 
+    width: 100% !important; border: none !important; 
+  }
+
+  /*
+  span.logo{
+    /* Logo weiter nach rechts, damit das Menue nicht überdeckt wird. 
+    /* display: none !important; */
+    /* padding: 50px 0px 0px 0px !important; 
+     padding-left: 50px !important;
+  } 
+  */
+
+/* Sonst wird die Suche nicht richtig als Icon gezeigt */
+  #top #menu-item-search {
+      /* ausgeschaltet, weil sonst das Icon nicht richtig angeklickt werden kann: */
+      /* width: 20px; */
+      display: block !important;
+  }  
+
+/* Damit das Wort "Menue" unter dem Hamburger-Menue nicht gezeigt wird */
+  .av-hamburger strong {
+    display: none!important;
+  }
+  
+/* Hintergrund - Farbe bei der Ansicht des Fotos auf grau - hgg, 15.6.2018 */
+  .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
+    border-color: #e8e8e8;
+    background-color: #e8e8e8;  
+}
+
+/*------------------------------------------------------------------------------ */
+/* Sonderfall von 990px bis 1100px */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/*------------------------------------------------------------------------------ */
+
+@media only screen 
+and (min-device-width : 990px) 
+and (max-device-width : 1100px)
+{
+/* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
+  .container {
+    max-width: 100% !important;
+  }
+  
+ 
+/* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
+  .content { 
+    width: 100% !important; border: none !important; 
+  }
+
+
+/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  .avia-menu-text {
+    font-size: 90% !important;
+}
+/*
+
+  #top #main .sidebar {         
+    width: 100% !important;
+  }
+ 
+  nav.main_menu {
+    display: block !important;
+  }
+  
+  #avia-menu .menu-item {
+    display: block;
+  }
+  
+  .av-burger-menu-main.menu-item-avia-special {
+    display: inline-block;
+  }
+*/  
+}
+
+@media only screen 
+and (min-device-width : 1101px) 
+and (max-device-width : 1250px) {
+
+/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  .avia-menu-text {
+    font-size: 90% !important;
+}
+
+}
+
+/*------------------------------------------------------------------------------ */
+/* ENDE - Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
+/* geändert: 1.4.2018 - 8.4.2018, hgg */
+/* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
+/*------------------------------------------------------------------------------ */
+
+
+/*
+/*------------------------------------------------------------------------------ */
+/* Fix for: Menu doesn't appear landscape mode on iPad, Enfold, 3.9.2017 */
+/*------------------------------------------------------------------------------ */
 /*ENDE MOBILES MENU ICON FIX 22.07.17 */
 
 /*------------------------------------------------------------------------------ */
@@ -1424,9 +1583,10 @@ h4 {
 /***** Start: SHARE BUTTONS Custom Styles *****/
 /***** Update: 24.10.2017
 /***** 
+/* ausgeschaltet: 5.6.2018, hgg (display: none)
 /*--------------------------------------------------------------- */
 .share {
-  display: block;
+  display: none;
   clear: both;
   text-align: left;
   padding-top: 20px;
@@ -1508,4 +1668,21 @@ h4 {
 /* Autor: hgg
 /*----------------------------------------------------------------*/
 
+/*----------------------------------------------------------------*/
+/* Start: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/
 
+.mitteilung{
+  background-color: #F9F9F9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-width:5px;  
+  border-style:dashed;
+}
+/*----------------------------------------------------------------*/
+/* Ende: aktuelle Mitteilungen in Beiträgen
+/* Datum: 19.4.2018
+/* Autor: hgg  
+/*----------------------------------------------------------------*/

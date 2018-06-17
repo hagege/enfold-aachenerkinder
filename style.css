@@ -886,7 +886,7 @@ width: 18px;
 
 #header_main_alternate, 
 #header_main_alternate .sub-menu  a{
-background: #6ba825
+background: #6ba825;
 }
 /*--------------------------------------------------------------- */
 /* Ende: Freizeitangebote: Überschrift wie bei logger */
@@ -1004,7 +1004,6 @@ background: #6ba825
 /*--------------------------------------------------------------- */ 
 
 .tribe-events-category-xxl .av-tribe-events-content-wrap, .tribe-events-category-premium .av-tribe-events-content-wrap{
-
   background: #e8e8e8;
 }
 
@@ -1044,12 +1043,11 @@ background: #6ba825
 
 
 .tribe-mobile .tribe-events-category-premium .tribe-event-url, .tribe-mobile .tribe-events-category-xxl .tribe-event-url, .tribe-mobile .tribe-events-category-xxl .url, .tribe-mobile .events-category-xxl .tribe-event-url {
-
-background-position: left center!important;
-margin-top: inherit;
+    background-position: left center!important;
+    margin-top: inherit;
     background-size: 60px!important;
-        padding-left: 75px!important;
-            padding-top: 0px!important; 
+    padding-left: 75px!important;
+    padding-top: 0px!important; 
 }
 /*--------------------------------------------------------------- */
 /* Ende: Premium Events in Listen- und Tagesansicht hervorheben  */
@@ -1064,10 +1062,9 @@ margin-top: inherit;
   .tribe-events-loop {
       padding-right: 50px;
   }
-  }
+}
   #top #wrap_all .type-tribe_events{
       padding-bottom: 5px;
-
 }
 
 #tribe-events-content.tribe-events-list .type-tribe_events h2{
@@ -1123,7 +1120,7 @@ margin-top: inherit;
 
 
 #tribe-community-events table{
-background: #fff;
+  background: #fff;
 }
 
 .tribe_community_edit .tribe-events-after-html{
@@ -1238,8 +1235,7 @@ background: #fff;
 /* Start: Fonts selber hosten anstatt Google API */
 /*--------------------------------------------------------------- */ 
 @font-face { font-family: 'OpenSans';
-src: url('fonts/open-sans.woff2') format('woff2'); 
-
+  src: url('fonts/open-sans.woff2') format('woff2'); 
 }
 /*--------------------------------------------------------------- */
 /* Ende: Fonts selber hosten anstatt Google API */
@@ -1260,7 +1256,6 @@ src: url('fonts/open-sans.woff2') format('woff2');
 
 #social-buttons a {
 	text-decoration: none;
-
 }
 
 /*--------------------------------------------------------------- */
@@ -1302,7 +1297,7 @@ src: url('fonts/open-sans.woff2') format('woff2');
  /* Für Internet Explorer */
  /* width :initial wird in IE nicht erkannt. Dafür aber "width: auto.      */
 
- #tribe-events-content.tribe-events-list .tribe-events-event-image {
+#tribe-events-content.tribe-events-list .tribe-events-event-image {
     float: none!important;
     margin-right: 15px!important;
     width: initial!important;
@@ -1386,6 +1381,14 @@ and (-webkit-min-device-pixel-ratio: 2) {
 /* geändert: 1.4.2018 - 8.4.2018, hgg */
 /* Geklärt: Menue soll als mobiles Menü bis 989px angezeigt werden. */
 /*------------------------------------------------------------------------------ */
+@media only screen and ( max-width: 770px ) {
+/* graue Farbe als Bildhintergund bei Auflösung < 770px, sonst weißer Hintergrund: hgg, 17.06.2018 */
+  .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
+    border-color: #e8e8e8;
+    background-color: #e8e8e8;  
+  }
+}
+
 @media only screen and ( max-width: 989px ) {
 
   .container #advanced_menu_toggle, .container #advanced_menu_hide {
@@ -1452,14 +1455,8 @@ and (-webkit-min-device-pixel-ratio: 2) {
 /* Damit das Wort "Menue" unter dem Hamburger-Menue nicht gezeigt wird */
   .av-hamburger strong {
     display: none!important;
-  }
-  
-/* Hintergrund - Farbe bei der Ansicht des Fotos auf grau - hgg, 15.6.2018 */
-  .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
-    border-color: #e8e8e8;
-    background-color: #e8e8e8;  
+  } 
 }
-
 /*------------------------------------------------------------------------------ */
 /* Sonderfall von 990px bis 1100px */
 /* geändert: 1.4.2018 - 8.4.2018, hgg */
@@ -1469,50 +1466,50 @@ and (-webkit-min-device-pixel-ratio: 2) {
 and (min-device-width : 990px) 
 and (max-device-width : 1100px)
 {
-/* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
+  /* Container (Inhalte) werden 100% angezeigt, allerdings nicht unter 767px - Regel aus grid.css*/
   .container {
     max-width: 100% !important;
   }
   
  
-/* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
+  /* Damit der Content (Inhalt) über die Breite gezeigt wird und nicht die sidebar frei gehalten wird */  
   .content { 
     width: 100% !important; border: none !important; 
   }
 
 
-/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  /* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
   .avia-menu-text {
     font-size: 90% !important;
-}
-/*
-
-  #top #main .sidebar {         
-    width: 100% !important;
   }
- 
-  nav.main_menu {
-    display: block !important;
-  }
+  /*
   
-  #avia-menu .menu-item {
-    display: block;
-  }
-  
-  .av-burger-menu-main.menu-item-avia-special {
-    display: inline-block;
-  }
-*/  
+    #top #main .sidebar {         
+      width: 100% !important;
+    }
+   
+    nav.main_menu {
+      display: block !important;
+    }
+    
+    #avia-menu .menu-item {
+      display: block;
+    }
+    
+    .av-burger-menu-main.menu-item-avia-special {
+      display: inline-block;
+    }
+  */  
 }
 
 @media only screen 
 and (min-device-width : 1101px) 
 and (max-device-width : 1250px) {
 
-/* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
+  /* Wenn die Schriftgröße auf 85% verringert wird, wird das Menü komplett gezeigt: */
   .avia-menu-text {
     font-size: 90% !important;
-}
+  }
 
 }
 
@@ -1553,11 +1550,9 @@ and (max-device-width : 1250px) {
 /*------------------------------------------------------------------------------ */
 /* Start: Adresse Formatierung, 21.10.2017
 /*------------------------------------------------------------------------------ */
-	.tribe-address .tribe-country-name{
-		
+	.tribe-address .tribe-country-name {
 		word-wrap: break-word!important;
-		margin-right: 10px!important;
-		
+		margin-right: 10px!important;		
 	}
 
 /*------------------------------------------------------------------------------ */
@@ -1570,8 +1565,7 @@ and (max-device-width : 1250px) {
 	.event-is-recurring a{
 		display: block;
 		word-wrap: break-word!important;
-		margin-right: 10px!important;
-		
+		margin-right: 10px!important;		
 	}
 
 /*------------------------------------------------------------------------------ */
@@ -1602,8 +1596,6 @@ and (max-device-width : 1250px) {
 .share .sharebutton:hover {
   text-decoration: underline;
 }
-
-/* ausgeschaltet: 15.6.2018, hgg */
 /*
 .share{
 	
@@ -1676,8 +1668,7 @@ and (max-device-width : 1250px) {
 /* Datum: 19.4.2018
 /* Autor: hgg  
 /*----------------------------------------------------------------*/
-
-.mitteilung{
+.mitteilung {
   background-color: #F9F9F9;
   padding: 10px;
   margin-bottom: 10px;
