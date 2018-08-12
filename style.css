@@ -1456,6 +1456,12 @@ and (-webkit-min-device-pixel-ratio: 2) {
   .av-hamburger strong {
     display: none!important;
   } 
+  
+/* Überschrift war teilweise nicht sichtbar (12.8.2018, hgg): */  
+  .tribe-events-page-title {
+    font-size: 18px !important;
+    margin-bottom: 50px !important; 
+  }  
 }
 /*------------------------------------------------------------------------------ */
 /* Sonderfall von 990px bis 1100px */
