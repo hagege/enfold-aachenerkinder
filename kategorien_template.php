@@ -27,6 +27,10 @@
                     <div class="entry-content-wrapper entry-content clearfix">
 
                     <?php
+                    //display the actual post content
+                    the_post();
+                    the_content();
+
 					
           					/* START: Teil mit den eigenen Inhalten: */
                     $url_ordner = "https://aachenerkinder.de/veranstaltungen/kategorie/";          					
@@ -65,7 +69,8 @@
           					
           					/* Daten ausgeben */
                     $anzahl_array = count ( $kategorienlink );
-                    ?>                   
+                    ?>
+                    <br><br>                   
                     <h4> <?php echo $anzahl_array; ?> Kategorien: </h4>
                     <table class="wp-block-table"><tbody>
           					<?php                    
@@ -88,9 +93,6 @@
           					<?php
           					/* ENDE: Teil mit den eigenen Inhalten: */
 
-                    //display the actual post content
-                    the_post();
-                    the_content();
 					
                     ?>
 

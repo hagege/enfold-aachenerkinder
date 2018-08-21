@@ -84,9 +84,12 @@ if ( ! isset( $tribe_event_id ) ) {
    
 
 	<?php tribe_get_template_part( 'community/modules/custom' ); ?>
+  <!-- Keine Premiumeinträge mehr ab dem 21.8.2018, hgg -->
+  <!--
   <p class="premium-description">Bei einem kostenpflichtigen Premiumeintrag erscheint ihr Veranstaltungstermin wie im <a href="https://aachenerkinder.de/wp-content/uploads/2016/10/screenshot_premiumveranstaltung.jpg">Beispiel</a>. Außerdem erscheint ihre Veranstaltung auf jeder Seite rechts unter "Premium-Veranstaltungen". Dort werden immer die 5 Veranstaltungen gezeigt, die als nächstes stattfinden. Premiumveranstaltungen können für jede Veranstaltung gebucht werden, die nicht länger als drei Tage dauert.
   Mit der Buchung der Premiumveranstaltung erklären Sie sich mit den <a href="https://aachenerkinder.de/wp-content/uploads/2016/10/AGB_aachenerkinder.de_.pdf" target="_blank">AGB</a> und der <a href="https://aachenerkinder.de/wp-content/uploads/2016/10/Widerrufsbelehrung_und_formular.pdf" target="_blank">Widerrufsbelehrung</a> einverstanden.<br>
   <a class="tribe-events-button" href="https://aachenerkinder.de/wp-content/uploads/2016/12/infos.jpg">Weitere Informationen zu Premium Veranstaltungen</a></p>
+  -->
 
 	<?php tribe_get_template_part( 'community/modules/cost' ); ?>
 
