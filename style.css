@@ -1383,9 +1383,14 @@ and (-webkit-min-device-pixel-ratio: 2) {
 /*------------------------------------------------------------------------------ */
 @media only screen and ( max-width: 770px ) {
 /* graue Farbe als Bildhintergund bei Auflösung < 770px, sonst weißer Hintergrund: hgg, 17.06.2018 */
+/* jetzt weißer Hintergrund: hgg, 5.10.2018 */
   .main_color .tribe-events-loop .tribe-events-event-meta, .main_color .tribe-events-list .tribe-events-venue-details {
-    border-color: #e8e8e8;
-    background-color: #e8e8e8;  
+    border-color: #e1e1e1!important; 
+    background-color: #ffffff!important; 
+    /* geändert 4.10.2108 statt: #e3ddcd; */  
+  }
+  .tribe-is-responsive.tribe-mobile .tribe-events-page-title {
+    margin-bottom: 2.5em!important;
   }
 }
 
