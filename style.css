@@ -1390,7 +1390,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
     /* geändert 4.10.2108 statt: #e3ddcd; */  
   }
   .tribe-is-responsive.tribe-mobile .tribe-events-page-title {
-    margin-bottom: 2.5em!important;
+    margin-bottom: 3.5em!important;
   }
 }
 
