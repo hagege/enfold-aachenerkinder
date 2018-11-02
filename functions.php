@@ -250,7 +250,7 @@ function tribe_alter_event_archive_titles ( $original_recipe_title, $depth ) {
       $first_event_date = tribe_get_start_date( $wp_query->posts[0], false );
     } else {
       //otherwise show the start date of the first event in the results
-      $first_event_date = tribe_event_format_date( $_REQUEST['tribe-bar-date'], false );
+      $first_event_date = tribe_format_date( $_REQUEST['tribe-bar-date'], false );
     }
     $last_event_date = tribe_get_end_date( $wp_query->posts[ count( $wp_query->posts ) - 1 ], false );
     $title = sprintf( $title_range, $first_event_date, $last_event_date );
@@ -340,4 +340,21 @@ function gibmirphp($text) {
 /* Ende: PHP in Text-Widget nutzen 
 /* Datum: 05.04.2018
 /* Autor: hgg
+/*----------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------*/
+/* Start: Balken links in der Überschrift der Events fehlte 
+/* Datum: 12.10.2018
+/* Autor: hgg
+/* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
+/*----------------------------------------------------------------*/
+add_filter( 'teccc_fix_category_background_color', function( $null, $category ) {
+	return "#top .main_color {$category} .tribe-events-list-event-title,";
+}, 10, 2 );
+/*----------------------------------------------------------------*/
+/* Ende: Balken links in der Überschrift der Events fehlte 
+/* Datum: 12.10.2018
+/* Autor: hgg
+/* https://wordpress.org/support/topic/category-colors-not-showing-after-update-to-5-2-2/page/2/#post-10757393
 /*----------------------------------------------------------------*/
